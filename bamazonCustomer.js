@@ -33,8 +33,13 @@ function startup() {
     header += align(key[2],20) + ' | ';
     header += align(key[3],10) + ' | ';
     header += align(key[4],10) + ' | ';
+    console.clear();
+    console.log('---------------------------------------------------------------------------------------------------------');
+    console.log('---------------------$$$SHOP BAMAZON CAUSE WE REALLY WANT YOUR MONEY; ALOT$$$----------------------------');
+    console.log('---------------------------------------------------------------------------------------------------------');
     console.log(header);
     console.log('---------------------------------------------------------------------------------------------------------');
+    
     bHeader = true;
    }
    line += align(val[0],7) + '   ';
@@ -73,7 +78,7 @@ function getSale(){
 }]).then(function(ans){    
     ProductId = ans.id.slice(0,String(ans.id).indexOf('.'));
     Quantity = ans.qty;
-    let Price = itemPrices[ProductId];
+    let Price = itemPrices[ProductId-1];
     if (Quantity === 0){return end();}
     return chkInventory(ProductId, Quantity, Price);    
   });
@@ -96,7 +101,8 @@ function completeOrder(ProductId, Quantity, Price){
   let upd = 'UPDATE Products set STOCK_QUANTITY = STOCK_QUANTITY - ? WHERE ITEM_ID = ?'
   connection.query(upd, [Quantity, ProductId], function(err,res){
   if(err){console.log(err); return end;}
-    console.log('Your total purchase is ' + (Price * Quantity) );
+    console.log('=========================================================================================================');
+    console.log('Your total purchase is ' + (Price * parseInt(Quantity) ));
     end();
   });
   
@@ -115,10 +121,10 @@ function end(){
          connection.end();
          return;
        }
+       
        return startup();
     }
-  );
-  
+  );  
 }
 function align(val,size){
   val = String(val).padStart(size/2);

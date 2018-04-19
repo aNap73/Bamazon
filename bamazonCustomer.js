@@ -18,7 +18,7 @@ var connection = mysql.createConnection({
 function startup() {
  items4sale.length=0;
  itemPrices.length=0;
- let sql = 'Select * from products';
+ let sql = 'Select * from products where STOCK_QUANTITY > 0';
  let bHeader = false;
  connection.query(sql,function(err,res){
   if(err){console.log(err); return end;}
@@ -37,6 +37,7 @@ function startup() {
     console.log('---------------------------------------------------------------------------------------------------------');
     console.log('---------------------$$$SHOP BAMAZON CAUSE WE REALLY WANT YOUR MONEY; ALOT$$$----------------------------');
     console.log('---------------------------------------------------------------------------------------------------------');
+    
     console.log(header);
     console.log('---------------------------------------------------------------------------------------------------------');
     
@@ -51,7 +52,7 @@ function startup() {
    line += align(val[4],10) + '   ';   
    console.log(line);
   }
-  
+  console.log('');
   return getSale();
  });
  

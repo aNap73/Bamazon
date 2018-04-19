@@ -72,7 +72,7 @@ function getSale(){
     type: 'input',
     message: 'How many would you like to buy?',
     validate: function(input){
-      if(isNaN(input)){return 'Quantity must be a number.'};
+      if(isNaN(input)||input.length<1){return 'Quantity must be a number.'};
       
       return true;
     }

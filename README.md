@@ -69,3 +69,5 @@ You will be asked to name the product, add it to a department or category, give 
 
 ![manager new product](./bm4.gif "New product bamazonManagaer")
 
+enjoy bamazon!
+

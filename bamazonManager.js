@@ -147,6 +147,7 @@ inq.prompt([{
 function addInventory() {
   let ProductId = '';
   let Quantity = 0;
+  if (items4sale.length < 1){return startup()};
   inq.prompt([{
     name: 'itm',
     type: 'list',

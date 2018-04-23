@@ -20,11 +20,11 @@ To run bamazon as a customer. Open your console, or git to the directory you hav
 
 To buy a product follow these steps:
 
-1.) use the arrow keys to select a product from the list.
-2.) Hit enter to select the product you wish to buy.
-3.) Now you may select how many of that product you wish to buy; this must be a positive   number.
-4.) If you picked the wrong product just select 0 as your quantity.
-5.) After selecting a quantity bamazon will ask you if you wish to continue shopping. Y to continue or N to leave the program.
+1) use the arrow keys to select a product from the list.
+2) Hit enter to select the product you wish to buy.
+3) Now you may select how many of that product you wish to buy; this must be a positive   number.
+4) If you picked the wrong product just select 0 as your quantity.
+5) After selecting a quantity bamazon will ask you if you wish to continue shopping. Y to continue or N to leave the program.
 
 ![purchase bamazon](./bc2.gif "Buy!")
 

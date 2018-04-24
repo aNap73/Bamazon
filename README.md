@@ -5,12 +5,23 @@ Bamazon is made up of 2 node.js console application (bamazonCustomer and bamazon
 
 # Setup
 
-1) Node setup up: this package requires mysql, dotenv, and inquirer to initialize simply
-   run `node init` after cloning the repository from git hub.
+1) This package will require mysql, dotenv, and inquirer to first we must,
+   run `npm i` after cloning the repository from git hub.
+   
+   git clone git@github.com:aNap73/Bamazon.git
+   cd Bamazon
+   npm i
+    
+
 2) You will need to run the schema.sql script directly into mysql workbench to create the
-   database and populate the tables.
+   database and populate the tables.  I will not try to explain this step it is beyond the scope of this document.
+
 3) You will have to create a .env file and put your personal local mysql password in the file.
     DBPWD=`your local mysql password here`
+
+4) If you are lost here. I feel your pain. I have provided some animated gif's below.
+
+5) If you are up and running. I salute you!     
 
 # bamazonCustomer
 
@@ -23,7 +34,7 @@ To buy a product follow these steps:
 1) use the arrow keys to select a product from the list.
 2) Hit enter to select the product you wish to buy.
 3) Now you may select how many of that product you wish to buy; this must be a positive   number.
-4) If you picked the wrong product just select 0 as your quantity.
+4) If you picked the wrong product just select 0 as your quantity. Do not tell the customers this is a sure fire way to ensure we make more sales!
 5) After selecting a quantity bamazon will ask you if you wish to continue shopping. Y to continue or N to leave the program.
 
 ![purchase bamazon](./bc2.gif "Buy!")
@@ -44,17 +55,20 @@ In management mode you have 5 options:
 
 ### Refresh Inventory View / View Low Inventory
 
-Refreshing the Inventory View will simply relist all the inventory. This function, becomes a little more easy to understand after trying to View Low Inventory.
+Refreshing the Inventory View will relist all the inventory from the database. 
 
-Viewing low inventory filters the product list to only those products with less than 5 on hand.
+Viewing low inventory, filters the inventory to only those products with less than 5 on hand.
 
 ![manager views](./bm2.gif "View bamazonManagaer")
 
 ### Add Inventory
 
-You may add inventory at anytime in bamazonManager, however, you may only add items in your current view. If you are in a full refresh view, you can add quantity to any item. If you are in the Low quantity view your list is reduced to just items that have low quantity on hand.
+You may add inventory at anytime in bamazonManager.
+First, Select either the full list of products with the `Refresh Inventory View` 
+or select a partial view of the inventory list with `View Low Inventory`.
 
-Upon selecting an item to add to from the list, you will be asked the quantity you wish to add to your on hand inventory. After this process is complete you will have added inventory for the item you selected.
+Select from this list the product you wish to replenish.
+Now input the quantity you wish to add to stock.
 
 Below see a manager checking his low inventory view, and then adding items to bring his on hand items for all products above qty of 5.
 
@@ -63,9 +77,9 @@ Below see a manager checking his low inventory view, and then adding items to br
 
 ### Add a new Product
 
-You may also add new products to the offerings at bamazon. To accomplish this simply select Add a product from the managers menu.
+You may also add new products to the offerings at bamazon. To accomplish this simply select `Add a product` from the managers menu.
 
-You will be asked to name the product, add it to a department or category, give it's price and what quantity you wish to load inventory with initialy.
+You will be asked to name the product, add it to a department or category, give it's price and select an inital quantity on hand.
 
 ![manager new product](./bm4.gif "New product bamazonManagaer")
 

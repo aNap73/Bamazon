@@ -8,16 +8,16 @@ Bamazon is made up of 2 node.js console application (bamazonCustomer and bamazon
 1) This package will require mysql, dotenv, and inquirer to first we must,
    run `npm i` after cloning the repository from git hub.
    
-   git clone git@github.com:aNap73/Bamazon.git
-   cd Bamazon
-   npm i
+   ##### git clone git@github.com:aNap73/Bamazon.git
+   ##### cd Bamazon
+   ##### npm i
     
 
 2) You will need to run the schema.sql script directly into mysql workbench to create the
    database and populate the tables.  I will not try to explain this step it is beyond the scope of this document.
 
 3) You will have to create a .env file and put your personal local mysql password in the file.
-    DBPWD=`your local mysql password here`
+   ##### DBPWD=`your local mysql password here`
 
 4) If you are lost here. I feel your pain. I have provided some animated gif's below.
 
